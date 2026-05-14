@@ -1,0 +1,262 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 80px 20px;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spin 0.9s linear infinite;
+}
+
+.errorText { font-size: 14px; color: var(--danger); }
+
+.retryBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ── Page layout ──────────────────────────────────── */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 4px 0 24px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.pendingCount {
+  background: var(--accent);
+  color: #0f0f1a;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+}
+
+.refreshBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 9px;
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1;
+  margin-left: auto;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.refreshBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.sentCount {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0 20px;
+}
+
+.sectionEmpty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.sectionEmptyIcon { font-size: 18px; line-height: 1; }
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Card (shared) ────────────────────────────────── */
+
+.card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: #0f0f1a;
+  flex-shrink: 0;
+}
+
+.identity { flex: 1; min-width: 0; }
+
+.name {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.course {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.snippet {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+
+.snippetLabel {
+  font-weight: 600;
+  color: var(--text-dim);
+  margin-right: 2px;
+}
+
+/* ── Status badge (sent cards) ────────────────────── */
+
+.statusBadge {
+  flex-shrink: 0;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border: 1px solid transparent;
+}
+
+.statusPending {
+  background: rgba(251, 191, 36, 0.1);
+  border-color: rgba(251, 191, 36, 0.3);
+  color: #fbbf24;
+}
+
+.statusAccepted {
+  background: rgba(52, 211, 153, 0.1);
+  border-color: rgba(52, 211, 153, 0.3);
+  color: var(--success);
+}
+
+.statusDeclined {
+  background: rgba(107, 114, 128, 0.1);
+  border-color: rgba(107, 114, 128, 0.25);
+  color: var(--text-dim);
+}
+
+/* ── Action buttons (received cards) ──────────────── */
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.declineBtn {
+  flex: 1;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  padding: 9px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.declineBtn:hover:not(:disabled) {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.acceptBtn {
+  flex: 2;
+  background: var(--success);
+  border: none;
+  border-radius: 9px;
+  padding: 9px 14px;
+  color: #0f0f1a;
+  font-size: 13px;
+  font-weight: 700;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.acceptBtn:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.acceptBtn:disabled,
+.declineBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

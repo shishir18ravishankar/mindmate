@@ -1,0 +1,191 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 80px 20px;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spin 0.9s linear infinite;
+}
+
+.errorText {
+  font-size: 14px;
+  color: var(--danger);
+}
+
+.retryBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ── Empty state ─────────────────────────────────── */
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 70px 20px;
+  gap: 12px;
+}
+
+.emptyIcon {
+  font-size: 44px;
+  line-height: 1;
+}
+
+.emptyTitle {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.emptySub {
+  font-size: 14px;
+  color: var(--text-muted);
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+/* ── List ────────────────────────────────────────── */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.listTitle {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.count {
+  background: var(--success);
+  color: #0f0f1a;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 9px;
+}
+
+/* ── Connection Card ─────────────────────────────── */
+
+.card {
+  background: var(--card);
+  border: 1.5px solid rgba(52, 211, 153, 0.2);
+  border-radius: 14px;
+  padding: 18px;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(52, 211, 153, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.connectedBadge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(52, 211, 153, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 14px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.identity { flex: 1; }
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.course {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.infoRow {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+.infoLabel {
+  font-weight: 600;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  min-width: 68px;
+}
+
+.infoValue {
+  color: var(--text-muted);
+}
+
+.funFact {
+  display: flex;
+  gap: 7px;
+  margin-top: 10px;
+  background: rgba(167, 139, 250, 0.05);
+  border: 1px solid rgba(167, 139, 250, 0.12);
+  border-radius: 9px;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.funFactIcon {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
